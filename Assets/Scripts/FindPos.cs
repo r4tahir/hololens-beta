@@ -16,8 +16,10 @@ public class FindPos : MonoBehaviour
     public bool filtered;
     List<Vector3> newlist;
     public Vector3 asdf;
+    public Vector3 center;
 
     public GameObject gameObject;
+    public GameObject prefab;
 
     public Vector3 pos;
     public List<Vector3> vecList;
@@ -65,7 +67,7 @@ public class FindPos : MonoBehaviour
         {
             Debug.Log(counter);
             vecList.Add(pos);
-            Debug.Log(pos);
+            //Debug.Log(pos);
             //Debug.Log(string.Format(string.Format("{0:N4}", moTar.transform.position)));
             counter++;
         }
@@ -74,6 +76,7 @@ public class FindPos : MonoBehaviour
             Debug.Log("filtering list");
             vecList = filterList(vecList);
             asdf = collectCOR(vecList);
+            //Debug.Log(asdf);
             filtered = true;
         }
     }
@@ -162,7 +165,12 @@ public class FindPos : MonoBehaviour
         y_ave /= corList.Count;
         z_ave /= corList.Count;
 
-        return new Vector3(x_ave, y_ave, z_ave);
+        GameObject obj = Instantiate(prefab, center, Quaternion.Euler(0f, 0f, 0f));
+        obj.name = "COR Sphere";
+
+        return center;
+
+
     }
 
     private void generateSphericalPoints()
