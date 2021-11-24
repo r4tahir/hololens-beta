@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="28.0" toolVersion="10.2.5">
+<ModelTarget name="ParametricBoaty" targetId="95f756af3e6a4dd3b855472f58dcc26e" version="14.0" toolVersion="10.2.5" bbox="-0.056811 0.001499 0.004972 0.000028 0.031902 0.056263" previewImage="95f756af3e6a4dd3b855472f58dcc26e_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="ParametricBoatys_assembly" assemblyId="a6e17b49d0ae4d1a89ea880db87e990b">
+<Part name="ParametricBoaty" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.0178626 0.0113625 0.173885" rotation="AD: 0.43648239759742424 1.7670713960382531 -1.0884587628999962 165.55" image="ParametricBoaty_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>

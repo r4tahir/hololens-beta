@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="ParametricBoaty" motionHint="dynamic" trackingMode="default"/>
+
+</Tracking>
+
+<Assembly name="ParametricBoatys_assembly" assemblyId="a6e17b49d0ae4d1a89ea880db87e990b">
+<Part name="ParametricBoaty" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.0178626 0.0113625 0.173885" rotation="AD: 0.43648239759742424 1.7670713960382531 -1.0884587628999962 165.55" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

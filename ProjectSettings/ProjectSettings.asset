@@ -136,9 +136,13 @@ PlayerSettings:
     Others: 1
   bundleVersion: 0.1
   preloadedAssets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 4166060202612478298, guid: d8e3f4d67efa0734c8b60220123a26e2, type: 2}
   - {fileID: 3079763222005409452, guid: 7bb48bce781de1a4890f498308e8e893, type: 2}
-  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -614,11 +618,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: HololensBETA
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 0056a06566ead801
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: HoloLensBeta
