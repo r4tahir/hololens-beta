@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="BoatyMcBoatface" motionHint="dynamic" trackingMode="default"/>
+<ModelTarget name="ParametricBoaty" motionHint="dynamic" trackingMode="default"/>
+<ModelTarget name="biclighter" motionHint="dynamic" trackingMode="default"/>
+<ModelTarget name="auger_pointer" motionHint="dynamic" trackingMode="default"/>
+
+</Tracking>
+
+<Assembly name="BoatyMcBoatfaces_assembly" assemblyId="3948e68709904dddb472edc674fd5c72">
+<Part name="BoatyMcBoatface" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-0.000734715 0.0228292 0.098176" rotation="AD: 0.3166988010510244 1.7699007998836183 -1.1487674542646256 168.994" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="ParametricBoatys_assembly" assemblyId="a6e17b49d0ae4d1a89ea880db87e990b">
+<Part name="ParametricBoaty" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.0178626 0.0113625 0.173885" rotation="AD: 0.43648239759742424 1.7670713960382531 -1.0884587628999962 165.55" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="biclighters_assembly" assemblyId="4d9678ef0fd94bc89fe4fd65e4f89ac9">
+<Part name="biclighter" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.0169144 0.010665 0.124345" rotation="AD: -0.9999999817640411 0.012063016849298835 -0.018810586610543547 114.67" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="auger_pointers_assembly" assemblyId="ff83ac8119de48fd89014e77b69aadc7">
+<Part name="auger_pointer" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-0.0533877 0.00854638 0.198841" rotation="AD: 0.8431478744201771 1.1091931504661914 -0.8514247432027312 136.756" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<ModelTargetDatabase name="multiple_objects_init" />
+</QCARConfig>
