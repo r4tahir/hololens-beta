@@ -76,7 +76,7 @@ public class FindPos : MonoBehaviour
             Debug.Log("filtering list");
             vecList = filterList(vecList);
             asdf = collectCOR(vecList);
-            Debug.Log(asdf);
+            //Debug.Log(asdf);
             filtered = true;
         }
     }
@@ -165,11 +165,7 @@ public class FindPos : MonoBehaviour
         y_ave /= corList.Count;
         z_ave /= corList.Count;
 
-        Vector3 ground_truth = new Vector3(0, 0, 0);
-
-        //Debug.Log(ground_truth);
-
-        if (center != ground_truth){
+        if (center != Vector3(0f, 0f, 0f)){
             GameObject obj = Instantiate(prefab, center, Quaternion.Euler(0f, 0f, 0f));
             obj.name = "COR Sphere";
         }
