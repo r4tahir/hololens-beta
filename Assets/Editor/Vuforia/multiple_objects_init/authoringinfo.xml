@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="28.0" toolVersion="10.2.5">
+<ModelTarget name="BoatyMcBoatface" targetId="839824148c214d7fb75b986e47a967ad" version="14.0" toolVersion="10.2.5" bbox="-0.030854 -0.015531 -0.000029 0.029205 0.015539 0.048042" previewImage="839824148c214d7fb75b986e47a967ad_preview.jpg"/>
+<ModelTarget name="ParametricBoaty" targetId="95f756af3e6a4dd3b855472f58dcc26e" version="14.0" toolVersion="10.2.5" bbox="-0.056811 0.001499 0.004972 0.000028 0.031902 0.056263" previewImage="95f756af3e6a4dd3b855472f58dcc26e_preview.jpg"/>
+<ModelTarget name="biclighter" targetId="8b862974334247129a4a8d7e63f362f2" version="14.0" toolVersion="10.2.5" bbox="-0.026909 0.000255 0.010580 -0.001426 0.080833 0.025524" previewImage="8b862974334247129a4a8d7e63f362f2_preview.jpg"/>
+<ModelTarget name="auger_pointer" targetId="9b6ca7e2f1e247da97f66f415c661dbe" version="14.0" toolVersion="10.2.5" bbox="-0.034475 -0.000059 0.000963 -0.000938 0.120709 0.034499" previewImage="9b6ca7e2f1e247da97f66f415c661dbe_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="BoatyMcBoatfaces_assembly" assemblyId="3948e68709904dddb472edc674fd5c72">
+<Part name="BoatyMcBoatface" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-0.000734715 0.0228292 0.098176" rotation="AD: 0.3166988010510244 1.7699007998836183 -1.1487674542646256 168.994" image="BoatyMcBoatface_viewpoint_0000.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="ParametricBoatys_assembly" assemblyId="a6e17b49d0ae4d1a89ea880db87e990b">
+<Part name="ParametricBoaty" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.0178626 0.0113625 0.173885" rotation="AD: 0.43648239759742424 1.7670713960382531 -1.0884587628999962 165.55" image="ParametricBoaty_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="biclighters_assembly" assemblyId="4d9678ef0fd94bc89fe4fd65e4f89ac9">
+<Part name="biclighter" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.0169144 0.010665 0.124345" rotation="AD: -0.9999999817640411 0.012063016849298835 -0.018810586610543547 114.67" image="biclighter_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="auger_pointers_assembly" assemblyId="ff83ac8119de48fd89014e77b69aadc7">
+<Part name="auger_pointer" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-0.0533877 0.00854638 0.198841" rotation="AD: 0.8431478744201771 1.1091931504661914 -0.8514247432027312 136.756" image="auger_pointer_viewpoint_0000.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<ModelTargetDatabase mtDBid="22a7d9967b884247a55d2940848a109f" name="multiple_objects_init" toolVersion="13.0" version="13.0">
+    <RecognitionResult assemblyId="3948e68709904dddb472edc674fd5c72" assemblyName="BoatyMcBoatface" entryPoint="viewpoint_0000" />
+    <RecognitionResult assemblyId="4d9678ef0fd94bc89fe4fd65e4f89ac9" assemblyName="biclighter" entryPoint="viewpoint_0001" />
+    <RecognitionResult assemblyId="a6e17b49d0ae4d1a89ea880db87e990b" assemblyName="ParametricBoaty" entryPoint="viewpoint_0001" />
+    <RecognitionResult assemblyId="ff83ac8119de48fd89014e77b69aadc7" assemblyName="auger_pointer" entryPoint="viewpoint_0000" />
+</ModelTargetDatabase>
+
+</QCARInfo>
