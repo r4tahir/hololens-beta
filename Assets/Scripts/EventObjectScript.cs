@@ -17,7 +17,7 @@ public class EventObjectScript : MonoBehaviour
         tmp = GameObject.Find("Button-ChangeCurrent");
 
         index = 1;
-        ModelTargetNameList = new List<string> { "pointerMT", "boneMT" };
+        ModelTargetNameList = new List<string> { "boneMT" };
         foreach (string s in ModelTargetNameList)
         {
             ModelTargetList.Add(GameObject.Find(s));
@@ -42,8 +42,9 @@ public class EventObjectScript : MonoBehaviour
         
     }
 
-    public void addPointToVectorList()
+    public void AddPointToVectorList(GameObject MasterObj)
     {
+        Debug.Log("adding point");
         GameObject ModelTarget = ModelTargetList[index - 1];
 
         Status objStatus = ModelTarget.GetComponent<ObserverBehaviour>().TargetStatus.Status;
@@ -61,12 +62,29 @@ public class EventObjectScript : MonoBehaviour
 
             Vector3 pos = ModelTarget.transform.localPosition;
 
-            GameObject ARCam = GameObject.Find("/ARCamera");
+            //Debug.Log("about to find aarcam");
+            GameObject ARCam = GameObject.Find("MixedRealityPlayspace/ARCamera");
             Vector3 ARCPos = ARCam.transform.localPosition;
             Vector3 diff = pos - ARCPos;
-
-            List<Vector3> vecList = Master.vecList;
+            Debug.Log(diff);
+            
+            //Debug.Log("about to find master veclist")
+            // GameObject MasterObj = GameObject.Find("MasterClass");
+            Master MasterScript = MasterObj.GetComponent<Master>();
+            List<Vector3> vecList = MasterScript.vecList;
             vecList.Add(diff);
+        }
+    }
+
+    public void PrintMasterVectorList(GameObject MasterObj)
+    {
+        // GameObject MasterObj = GameObject.Find("MasterClass");
+        Master MasterScript = MasterObj.GetComponent<Master>();
+        List<Vector3> vecList = MasterScript.vecList;
+        Debug.Log("printing master list");
+        foreach (Vector3 vec in vecList)
+        {
+            Debug.Log(vec);
         }
     }
 }
