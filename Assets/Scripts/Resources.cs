@@ -93,10 +93,7 @@ public static class Resources
 
         while (i < vecList.Count)
         {
-            if (i+4 <= vecList.Count)
-            {
-                listCOR[i] = Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]);
-            }
+            listCOR.Add(Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]));
             i += 4;
             counter++;
         }
@@ -108,7 +105,7 @@ public static class Resources
         }
 
         COR = sum / listCOR.Count;
-        Debug.Log(COR);
+        Debug.Log(COR.ToString("F6"));
         return COR;
     }
 }
