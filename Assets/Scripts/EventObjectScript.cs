@@ -86,5 +86,14 @@ public class EventObjectScript : MonoBehaviour
         {
             Debug.Log(vec);
         }
+        return;
+    }
+
+    public void doAssimilateCOR(GameObject MasterObj)
+    {
+        Vector3 cor = Resources.AssimilateCoR(MasterObj);
+        GameObject spherical = GameObject.Find("spherical");
+        spherical.transform.localPosition = cor;
+        return;
     }
 }

@@ -108,7 +108,6 @@ public static class Resources
         }
 
         COR = sum / listCOR.Count;
-
         Debug.Log(COR);
         return COR;
     }
