@@ -80,4 +80,36 @@ public static class Resources
                                                   { r10, r11, r12 },
                                                   { r20, r21, r22 } });
     }
+
+    public static Vector3 AssimilateCoR(GameObject MasterObj)
+    {
+        Vector3 COR;
+        Master MasterScript = MasterObj.GetComponent<Master>();
+        List<Vector3> vecList = MasterScript.vecList;
+        List<Vector3> listCOR = new List<Vector3> {};
+
+        int counter = 0;
+        int i = 0;
+
+        while (i < vecList.Count)
+        {
+            if (i+4 <= vecList.Count)
+            {
+                listCOR[i] = Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]);
+            }
+            i += 4;
+            counter++;
+        }
+
+        Vector3 sum = new Vector3(0, 0, 0);
+        foreach (Vector3 cor in listCOR)
+        {
+            sum += cor;
+        }
+
+        COR = sum / listCOR.Count;
+
+        Debug.Log(COR);
+        return COR;
+    }
 }
