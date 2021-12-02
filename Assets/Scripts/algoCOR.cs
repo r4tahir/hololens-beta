@@ -15,7 +15,7 @@ public class algoCOR : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Resources playerScript = GetComponent<Resources>();
+        //Resources playerScript = GetComponent<Resources>();
 
         while (i < vecList.Count)
         {
