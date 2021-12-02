@@ -71,6 +71,7 @@ public class EventObjectScript : MonoBehaviour
             //Debug.Log("about to find master veclist")
             // GameObject MasterObj = GameObject.Find("MasterClass");
             Master MasterScript = MasterObj.GetComponent<Master>();
+            MasterScript.text1 = diff.ToString();
             List<Vector3> vecList = MasterScript.vecList;
             vecList.Add(diff);
         }

@@ -21,7 +21,9 @@ public class Master : MonoBehaviour
         {
             instance = this;
         }
+        text1 = "hello world!";
     }
+    public string text1;
 
     public List<Vector3> vecList;
 
