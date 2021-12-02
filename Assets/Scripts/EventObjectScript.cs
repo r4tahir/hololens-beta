@@ -17,7 +17,7 @@ public class EventObjectScript : MonoBehaviour
         tmp = GameObject.Find("Button-ChangeCurrent");
 
         index = 1;
-        ModelTargetNameList = new List<string> { "boneMT" };
+        ModelTargetNameList = new List<string> { "ImageTarget" };
         foreach (string s in ModelTargetNameList)
         {
             ModelTargetList.Add(GameObject.Find(s));
