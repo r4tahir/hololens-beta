@@ -88,17 +88,13 @@ public static class Resources
         List<Vector3> vecList = MasterScript.vecList;
         List<Vector3> listCOR = new List<Vector3> {};
 
-        int counter = 0;
         int i = 0;
 
-        while (i < vecList.Count)
+        while (i+4 < vecList.Count)
         {
-            if (i+4 <= vecList.Count)
-            {
-                listCOR[i] = Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]);
-            }
+            listCOR.Add(Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]));
+            //COR = Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]);
             i += 4;
-            counter++;
         }
 
         Vector3 sum = new Vector3(0, 0, 0);
@@ -108,8 +104,7 @@ public static class Resources
         }
 
         COR = sum / listCOR.Count;
-
-        Debug.Log(COR);
+        Debug.Log("Outputting: " + COR.ToString("F6"));
         return COR;
     }
 }
