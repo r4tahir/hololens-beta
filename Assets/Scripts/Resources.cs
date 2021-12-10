@@ -83,28 +83,31 @@ public static class Resources
 
     public static Vector3 AssimilateCoR(GameObject MasterObj)
     {
-        Vector3 COR;
+        Vector3 COR = new Vector3(0,0,0);
         Master MasterScript = MasterObj.GetComponent<Master>();
         List<Vector3> vecList = MasterScript.vecList;
-        List<Vector3> listCOR = new List<Vector3> {};
 
         int i = 0;
+        int counter = 0;
 
         while (i+4 < vecList.Count)
         {
-            listCOR.Add(Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]));
+            Vector3 TEMP = Resources.CenterOfRotation(vecList[i], vecList[i+1], vecList[i+2], vecList[i+3]);
+            if (!Single.IsNaN(TEMP.x) && !Single.IsNaN(TEMP.y) && !Single.IsNaN(TEMP.z))
+            {
+                Debug.Log(TEMP.ToString("F6"));
+                COR += TEMP;
+                counter++;
+            }
             //COR = Resources.CenterOfRotation(vecList[i], vecList[i + 1], vecList[i + 2], vecList[i + 3]);
-            i += 4;
+            i++;
         }
-
-        Vector3 sum = new Vector3(0, 0, 0);
-        foreach (Vector3 cor in listCOR)
+        if (counter > 0)
         {
-            sum += cor;
+            COR /= counter;
         }
-
-        COR = sum / listCOR.Count;
         Debug.Log("Outputting: " + COR.ToString("F6"));
+        MasterScript.text1 = COR.ToString("F6");
         return COR;
     }
 }

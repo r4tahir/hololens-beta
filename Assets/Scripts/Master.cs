@@ -11,6 +11,7 @@ public class Master : MonoBehaviour
 {
     public Master instance;
 
+    // singleton definition
     private void Awake()
     {
         if (instance != null)
