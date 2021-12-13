@@ -98,37 +98,71 @@ public class EventObjectScript : MonoBehaviour
         return;
     }
 
-    public void testCOR(GameObject MasterObj)
+    public void TestCOR(GameObject MasterObj)
     {
+        //PopulateVecListWithRandom(ref MasterObj);
+
         Master MasterScript = MasterObj.GetComponent<Master>();
         List<Vector3> vecList = MasterScript.vecList;
+        float upper = 0.5f;
+        float lower = -0.5f;
 
         double R = 10.0;
+        float RR = (float)R;
 
-        float x0 = 1;
-        float y0 = -5;
-        float z0 = -10;
-        Vector3 ground_truth = new Vector3(x0, y0, z0);
-
-        for (double theta = Math.PI/10; theta < Math.PI*0.9; theta+= Math.PI/10)
+        float x0 = 1f;
+        float y0 = 1f;
+        float z0 = 1f;
+        System.Random rnd = new System.Random();
+        for (int i = 0; i < 100; i++)
         {
-            for (double r= R/10; r < R*0.9; r+= R/10)
-            {
-                float x = (float)(r * Math.Cos(theta) + x0);
-                float y = (float)(r * Math.Sin(theta) + y0);
-                Debug.Log(R * R - (x - x0) * (x - x0) - (y - y0) * (y - y0));
-                float z = (float)(Math.Sqrt(R*R - (x - x0) * (x - x0) - (y - y0) * (y - y0)) + z0);
-                vecList.Add(new Vector3(x, y, z));
-            }
+            float r = GetRandomFloat(rnd, 0.1f*RR, 0.99f*RR);
+            float theta = GetRandomFloat(rnd, 0,  0.99f * 2 * (float)Math.PI);
+
+            float x = (float)(r * Math.Cos(theta) + x0) + GetRandomFloat(rnd, lower, upper);
+            float y = (float)(r * Math.Sin(theta) + y0) + GetRandomFloat(rnd, lower, upper);
+            float z = (float)(Math.Sqrt(R * R - (x - x0) * (x - x0) - (y - y0) * (y - y0)) + z0) + GetRandomFloat(rnd, lower, upper);
+            vecList.Add(new Vector3(x, y, z));
         }
-
-        Debug.Log(vecList.Count);
-        foreach (Vector3 point in vecList)
+        if (vecList.Count == 0)
         {
-            Debug.Log(point.ToString("F6"));
+            Debug.Log("veclist empty");
         }
 
         doAssimilateCOR(MasterObj);
         return;
     }
+
+    public void PopulateVecListWithRandom(ref GameObject MasterObj)
+    {
+        Master MasterScript = MasterObj.GetComponent<Master>();
+        List<Vector3> vecList = MasterScript.vecList;
+        float upper = 0; //1.0f;
+        float lower = 0; //-1.0f;
+
+        double R = 10.0;
+
+        float x0 = 1f;
+        float y0 = 1f;
+        float z0 = 1f;
+        System.Random rnd = new System.Random();
+        for (double theta = Math.PI / 10; theta < Math.PI * 0.45; theta += Math.PI / 10)
+        {
+            for (double r = R / 10; r < R * 0.9; r += R / 10)
+            {
+                float x = (float)(r * Math.Cos(theta) + x0) + GetRandomFloat(rnd, lower, upper);
+                float y = (float)(r * Math.Sin(theta) + y0) + GetRandomFloat(rnd, lower, upper);
+                float z = (float)(Math.Sqrt(R * R - (x - x0) * (x - x0) - (y - y0) * (y - y0)) + z0) + GetRandomFloat(rnd, lower, upper);
+                vecList.Add(new Vector3(x, y, z));
+            }
+        }
+
+        return;
+    }
+
+    public float GetRandomFloat(System.Random rnd, float lower, float upper)
+    {
+        return (float)((upper-lower) * rnd.NextDouble() + lower);
+    }
 }
+
