@@ -104,10 +104,10 @@ public class EventObjectScript : MonoBehaviour
 
         Master MasterScript = MasterObj.GetComponent<Master>();
         List<Vector3> vecList = MasterScript.vecList;
-        float upper = 0.5f;
-        float lower = -0.5f;
+        float upper = 0.1f;
+        float lower = -0.1f;
 
-        double R = 10.0;
+        double R = 1.0;
         float RR = (float)R;
 
         float x0 = 1f;
@@ -119,10 +119,12 @@ public class EventObjectScript : MonoBehaviour
             float r = GetRandomFloat(rnd, 0.1f*RR, 0.99f*RR);
             float theta = GetRandomFloat(rnd, 0,  0.99f * 2 * (float)Math.PI);
 
-            float x = (float)(r * Math.Cos(theta) + x0) + GetRandomFloat(rnd, lower, upper);
-            float y = (float)(r * Math.Sin(theta) + y0) + GetRandomFloat(rnd, lower, upper);
-            float z = (float)(Math.Sqrt(R * R - (x - x0) * (x - x0) - (y - y0) * (y - y0)) + z0) + GetRandomFloat(rnd, lower, upper);
-            vecList.Add(new Vector3(x, y, z));
+            float x = (float)(r * Math.Cos(theta) + x0);
+            float y = (float)(r * Math.Sin(theta) + y0);
+            float z = (float)(Math.Sqrt(R * R - (x - x0) * (x - x0) - (y - y0) * (y - y0)) + z0);
+            vecList.Add(new Vector3(x + GetRandomFloat(rnd, lower, upper),
+                                    y + GetRandomFloat(rnd, lower, upper),
+                                    z + GetRandomFloat(rnd, lower, upper)));
         }
         if (vecList.Count == 0)
         {

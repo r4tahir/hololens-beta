@@ -83,7 +83,10 @@ public static class Resources
 
     public static Vector3 AssimilateCoR(GameObject MasterObj)
     {
+        Kalman Filter = new Kalman();
+        Filter.HololensSpecific();
         Vector3 COR = new Vector3(0,0,0);
+        Vector3 COR_KF = new Vector3(0,0,0);
         Master MasterScript = MasterObj.GetComponent<Master>();
         List<Vector3> vecList = MasterScript.vecList;
 
@@ -96,6 +99,9 @@ public static class Resources
             if (!Single.IsNaN(TEMP.x) && !Single.IsNaN(TEMP.y) && !Single.IsNaN(TEMP.z))
             {
                 Debug.Log(TEMP.ToString("F6"));
+                vf temp = Numerics.Vector3xFrmVector3(TEMP);
+                Filter.Update(temp);
+
                 COR += TEMP;
                 counter++;
             }
@@ -106,7 +112,10 @@ public static class Resources
         {
             COR /= counter;
         }
-        Debug.Log("Outputting: " + COR.ToString("F6"));
+        COR_KF = Numerics.Vector3FrmVector3x(Filter.GetState());
+
+        Debug.Log("COR: " + COR.ToString("F6"));
+        Debug.Log("COR_KF: " + COR_KF.ToString("F6"));
         MasterScript.text1 = COR.ToString("F6");
         return COR;
     }
