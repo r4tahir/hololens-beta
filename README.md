@@ -1,5 +1,7 @@
 # hololens-beta (ongoing)
 
+Supports Vuforia Engine Image/Model Target
+
 Brief video from early-stage simulation: 
 
 
