@@ -12,10 +12,20 @@ public class algoCOR : MonoBehaviour
     int counter;
     int i;
 
+    public Vector3 startPos;
+    public Vector3 endPos;
+
+    int first;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         //Resources playerScript = GetComponent<Resources>();
+
+        
 
         while (i < vecList.Count)
         {
@@ -42,6 +52,30 @@ public class algoCOR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+   
+        var go = GameObject.Find("EmptyBoss");
+
+
+        var startPoint = GameObject.Find("CentralSphere");
+        var endPoint = GameObject.Find("EndSphere");
+
+        var lineRend = go.AddComponent<LineRenderer>();
+
+        go.GetComponent<LineRenderer>().SetWidth(0.05f, 0.05f);
+       
+
+        startPos = startPoint.transform.position;
+        endPos = endPoint.transform.position;
+
+        lineRend.SetPosition(0, startPos);
+        lineRend.SetPosition(1, endPos);
+
+    }
+
+    //WILL FIILL THIS LATER, FOR NICER CODE
+    private void drawDrillLine()
+    { 
         
     }
 }
